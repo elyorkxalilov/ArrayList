@@ -1,6 +1,6 @@
 package Lesson_28.O;
 
-public class Bag implements Vendor{
+public class BagMagazine implements Vendor{
 
     @Override
     public int toSell() {

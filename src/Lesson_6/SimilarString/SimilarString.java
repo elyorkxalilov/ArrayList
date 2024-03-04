@@ -31,7 +31,18 @@ public class SimilarString {
     }
 
     public boolean equals(char[] mass) {
-        return true;
+        if (mass.length == chars.length) {
+            int index = 0;
+            for (int i = 0; i < chars.length; i++) {
+                if (chars[i] == mass[i]) {
+                    index++;
+                }
+            }
+            if (index == chars.length) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int lengthString() {
@@ -39,16 +50,17 @@ public class SimilarString {
     }
 
     public boolean contains(char[] mass) {
-        k:
+        int index = 0;
         for (int i = 0; i < chars.length; i++) {
             for (int j = 0; j < mass.length; j++) {
                 if ((int) chars[i] == (int) mass[j]) {
-                    if (j == mass.length - 1) {
+                    ++index;
+                    ++i;
+                    if (index == mass.length) {
                         return true;
                     }
-                    break k;
                 } else {
-                    j = 0;
+                    break;
                 }
             }
         }

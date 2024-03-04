@@ -1,8 +1,6 @@
 package Lesson_28.O;
 
-public class Footwear implements Vendor{
-
-
+public class FoodMagazine implements Vendor{
     @Override
     public int toSell() {
        return 12;
